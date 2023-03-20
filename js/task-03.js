@@ -14,9 +14,11 @@ const images = [
 ];
 
 const gallery = document.querySelector(".gallery");
+// gallery.style['list-style'] = 'none';
+gallery.style.listStyle = 'none';
 
 const createGalleryItem = ({ url, alt }) => {
-  const item = `<li><img src="${url}" alt="${alt}" class="gallery__item" width = 800></li>`;
+  const item = `<li><img src="${url}" alt="${alt}" class="gallery__item" width = '1250' /></li>`;
   return item;
 };
 

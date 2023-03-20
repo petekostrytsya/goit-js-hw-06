@@ -4,6 +4,10 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
+const btnCreate = document.querySelector('button[data-create]');
+const btnDestroy = document.querySelector('button[data-destroy]');
+const inputNumber = document.querySelector('#controls input');
+
 function createBoxes(amount) {
   const boxContainer = document.querySelector('#boxes');
   // створення елементів
@@ -16,7 +20,7 @@ function createBoxes(amount) {
     box.style.height = `${size}px`;
     box.style.backgroundColor = color;
     // додавання елементів в контейнер
-    boxContainer.appendChild(box);
+    boxContainer.appendChild(box); 
   }
 }
 
@@ -27,12 +31,5 @@ function destroyBoxes() {
   }
 }
 
-const controls = document.querySelector('#controls');
-controls.addEventListener('click', element => {
-  if (element.target.dataset.create) {
-    const amount = +document.querySelector('input').value;
-    createBoxes(amount);
-  } else if (element.target.dataset.destroy) {
-    destroyBoxes();
-  }
-});
+btnCreate.addEventListener('click', () => createBoxes(inputNumber.value));
+btnDestroy.addEventListener('click', destroyBoxes);
