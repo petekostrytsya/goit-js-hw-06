@@ -7,13 +7,26 @@ const ingredients = [
   'Condiments',
 ];
 
+const ul = document.getElementById("ingredients");
 
-const list = document.querySelector('#ingredients');
+ingredients.forEach(ingredient => {
+  const li = document.createElement("li");
+  li.innerText = ingredient;
+  li.className = "item";
+  ul.appendChild(li);
+});
 
-for (let ingredient = 0; ingredient< ingredients.length; ingredient += 1) {
-  let item = document.createElement("li");
-  item.innerText = ingredients[ingredient];
-  item.classList.add("item");
-  list.append(item);
-}
+
+
+
+
+
+// const list = document.querySelector('#ingredients');
+
+// for (let ingredient = 0; ingredient< ingredients.length; ingredient += 1) {
+//   let item = document.createElement("li");
+//   item.innerText = ingredients[ingredient];
+//   item.classList.add("item");
+//   list.append(item);
+// }
 
